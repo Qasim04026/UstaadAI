@@ -11,8 +11,8 @@ model = AutoModelForImageTextToText.from_pretrained(
 ).eval()
 
 def ask_ustaad(question):
-    sys_prompt =(
-  "آپ نویں جماعت کے FBISE Biology کے ایک بہترین اور ذمہ دار استاد ہیں۔
+    sys_prompt = (
+    "آپ نویں جماعت کے FBISE Biology کے ایک بہترین اور ذمہ دار استاد ہیں۔
 "
         "جواب دینے سے پہلے سوال کی سائنس کو اچھی طرح سمجھیں۔
 "
@@ -59,7 +59,6 @@ def ask_ustaad(question):
         "- جواب ادھورا نہ چھوڑیں۔
 "
         "- سائنسی معلومات 100% درست ہوں۔"
-) 
        
     
     messages = [{"role": "user", "content": [{"type": "text", "text": f"{sys_prompt}\n\nسوال: {question}"}]}]
@@ -80,7 +79,7 @@ demo = gr.Interface(
     inputs=gr.Textbox(label="سوال لکھیں", placeholder="مثلاً: مائٹوکونڈریا کیا ہے؟"),
     outputs=gr.Textbox(label="UstaadAI کا جواب", lines=15),
     title="UstaadAI - اردو بیالوجی استاد",
-    description="<div style=\'text-align: right; direction: rtl;\'>نویں جماعت FBISE Biology کے سوالات اردو میں پوچھیں</div>"
+    description="نویں جماعت FBISE Biology کے سوالات اردو میں پوچھیں"
 )
 
 demo.launch()
