@@ -2,4 +2,4 @@ transformers>=4.50.0
 torch
 torchvision
 gradio
-accelerateandwidth
+accelerate
